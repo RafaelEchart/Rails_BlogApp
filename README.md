@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Rails Blog App
 
-> Description the project.
+> This project is in progress
 
 
 ## Built With
