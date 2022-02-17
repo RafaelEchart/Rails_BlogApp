@@ -4,7 +4,6 @@ require 'capybara/rspec'
 RSpec.describe 'Users' do
   before(:each) { get '/users' }
 
-
   describe 'Users pages visited', type: :feature do
     it 'Main user page is visited' do
       visit '/users'
@@ -38,5 +37,4 @@ RSpec.describe 'Users' do
       expect(response).to have_http_status(:ok)
     end
   end
-
-end 
+end

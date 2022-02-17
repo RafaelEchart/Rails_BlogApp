@@ -2,7 +2,6 @@ require 'rails_helper'
 require 'capybara/rspec'
 
 RSpec.describe 'Posts' do
-
   describe 'Users pages visited', type: :feature do
     it 'Main post of user(By ID) page is visited' do
       visit '/users/:123/posts'
@@ -36,7 +35,4 @@ RSpec.describe 'Posts' do
       expect(response).to have_http_status(:ok)
     end
   end
-
-
-
 end
