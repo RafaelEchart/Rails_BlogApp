@@ -1,62 +1,56 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Rails Blog App
+# Ruby on Rails Blog App
 
-> This project is in progress
+> The Blog app will be a classic example of a blog website. You will create a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
+- Ruby
+- Ruby on Rails
+- CSS
+- PostgreSQL
 
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
+- Ruby
+- Ruby on Rails 
+- Terminal
+
 ### Setup
+
+git clone https://github.com/RafaelEchart/Rails_BlogApp.git
 
 ### Install
 
+Run in the terminal to install the gems:
+
+`bundle install`
+
 ### Usage
 
-### Run tests
+To run the Rails server, in the terminal: 
 
-### Deployment
+`rails s`
 
+## Author
 
+👤 **Rafael Echart**
 
-## Authors
+- GitHub: [@RafaelEchart](https://github.com/rafaelechart)
+- Twitter: [@RafaelEchart](https://twitter.com/rafaelechart)
 
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
 
 ## Show your support
 
@@ -64,9 +58,9 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Ruby and Ruby on Rails Documentation
+- Microverse Guidelines
+- Me ⭐️
 
 ## 📝 License
 
