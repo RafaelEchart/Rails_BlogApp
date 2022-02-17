@@ -5,7 +5,7 @@ RSpec.describe 'Users' do
   before(:each) { get '/users' }
 
 
-  describe 'Users page visited', type: :feature do
+  describe 'Users pages visited', type: :feature do
     it 'Main user page is visited' do
       visit '/users'
       expect(page).to have_text('This is the main page')
