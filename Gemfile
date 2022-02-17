@@ -6,6 +6,9 @@ ruby '3.1.0'
 # Rails linters
 gem 'rubocop', '>= 1.0', '< 2.0'
 
+# Test Rspec
+gem 'rspec-rails', '~> 5.0.0'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.2', '>= 7.0.2.2'
 
