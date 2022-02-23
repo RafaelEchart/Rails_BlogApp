@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_many :likes
   has_many :comments
 
-  def recent_posts
-    posts.order(created_at: desc).limit(3)
+  def self.recent_posts(user_id)
+    Post.where(user_id: user_id).order(created_at: :desc).take(3)
   end
 end
