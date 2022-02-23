@@ -1,1 +1,40 @@
-<h1>This page will show information about a post(By ID) from a user(By ID)</h1>
+<body class="users_page_body">
+
+
+
+      <div class="blog-slider">
+      <h2 class="background double"><span>Post #<%= @post.id %>: <%= @post.title %> by <%= @post.user.name %>  </span></h2>
+            <div class="biografia_text margin_bottom"> <%= @post.text %> </div>
+            <div class="likes_comments_align">
+            <span>Comments: <%= @post.comments_counter if @post.comments_counter %> <%= "0" if !@post.comments_counter %></span>
+            <span>Likes: <%= @post.likes_counter if @post.likes_counter %> <%= "0" if !@post.likes_counter %></span>
+            </div>
+            
+      <div class="blog-slider" style="background-color: lightblue; margin-top: 55px">
+
+      <% if @post.comments.empty?%>
+        <h3>No comments yet</h3>
+      <% else %>
+
+      <% @post.comments.each do |comment| %>
+    Username: <%= comment.user.name %>
+    Comment: <%= comment.text %>
+   
+    <br />
+    <% end %>
+
+      <% end %>
+  
+
+
+      </div>
+
+      <a href="/users/<%= @user_id %>/posts" class="link_style center_button">
+<button class="button-29" role="button">See all posts</button>
+</a>
+
+      
+      </div>
+
+      
+</body>

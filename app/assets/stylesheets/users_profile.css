@@ -198,6 +198,10 @@ h2.double:after {
   margin-bottom: 15px;
 }
 
+.margin_top {
+  margin-top: 15px;
+}
+
 @media screen and (max-width: 800px) {
   .profile-container {
     height: 355px;
