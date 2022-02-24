@@ -1,31 +1,13 @@
 <body class="users_page_body">
 
-    <div class="profile-container">
-          
-          
-          <div class="profile_items">
-            <div class="profile_img">
-              <%= image_tag(@user.photo, alt: "User Image") if @user.photo %> 
-           </div>
-            <div class="profile_content">
-            <div>
-              <span class="profile_joined">Joined: <%= @user.created_at.strftime("%B %d, %Y") %></span>
-              <div class="profile_username">@<%= @user.name.gsub(/\s+/, "") %></div>
-            </div>
-              <button class="button-17" role="button">Posts: <%= @user.post_counter if @user.post_counter %> <%= "0" if !@user.post_counter %></button>
-            </div>
-          </div>
-          
-      </div>
+              <%= render 'partials/profileheader', :user => @user%>
+
 
 
 
  <% if @user_posts.empty? %>
-      <span>
-      <div class="blog-slider">
-        <div class="blog-slider__title center_message">No data found</div>
-        </div>
-      </span>
+                  <%= render 'partials/nodata' %>
+
       <% else %>
 
       <% @user_posts.each do |user_post| %>
