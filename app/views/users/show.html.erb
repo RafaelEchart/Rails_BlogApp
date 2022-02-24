@@ -1,12 +1,6 @@
 <body class="users_page_body">
 
-
           <%= render 'partials/profileheader', :user => @user%>
-
-    
-
-
-
 
       <div class="blog-slider">
      <h2 class="background double newcolor"><span>Biography</span></h2>
@@ -20,7 +14,7 @@
 
 <% @user.recent_posts.each do |user_post| %>
             
-                              <%= link_to "/users/#{@user.id}/posts/#{user_post.id}", class: "link_style" do %>
+      <%= link_to "/users/#{@user.id}/posts/#{user_post.id}", class: "link_style" do %>
 
       <div class="blog-slider">
       <h2 class="background double"><span>Post #<%= user_post.id %>: <%= user_post.title %> </span></h2>
