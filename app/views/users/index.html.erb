@@ -1,5 +1,13 @@
 <body class="main_page_body">
 
+        <% if @all_users.empty? %>
+        <div class="blog-slider">
+        <div class="blog-slider__title center_message">No data found</div>
+        </div>
+        <% else %>
+
+
+
     <% @all_users.each do |user| %>
         <div class="blog-slider">
           <div class="blog-slider__item swiper-slide">
@@ -16,6 +24,8 @@
           </div>
           
       </div>
+<% end %>
+
 <% end %>
    
     

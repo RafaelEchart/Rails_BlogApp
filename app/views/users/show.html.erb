@@ -27,6 +27,14 @@
       </div>
       </div>
 
+      <% if @user.posts.empty? %>
+      <span>
+      <div class="blog-slider">
+        <div class="blog-slider__title center_message">No data found</div>
+        </div>
+      </span>
+      <% else %>
+
 <% @user.recent_posts.each do |user_post| %>
             
                               <%= link_to "/users/#{@user.id}/posts/#{user_post.id}", class: "link_style" do %>
@@ -47,6 +55,7 @@
 
 <button class="button-29" role="button">See all posts</button>
 <% end %>
+      <% end %>
 
 
     

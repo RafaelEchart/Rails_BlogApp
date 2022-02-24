@@ -19,9 +19,17 @@
       </div>
 
 
+
+ <% if @user_posts.empty? %>
+      <span>
+      <div class="blog-slider">
+        <div class="blog-slider__title center_message">No data found</div>
+        </div>
+      </span>
+      <% else %>
+
       <% @user_posts.each do |user_post| %>
               
-
                 <%= link_to "/users/#{@user.id}/posts/#{user_post.id}", class: "link_style" do %>
 
       <div class="blog-slider">
@@ -45,27 +53,12 @@
     Comment: <%= comment.text %>
 <br />
     <% end %>
-
-           
-
-     
-
-
-      
-     
-   
-    
-
       <% end %>
-  
-
-
       </div>
-
-      
+     
       </div>
-
-      
+     
+      <% end %>
       <% end %>
       <% end %>
 
