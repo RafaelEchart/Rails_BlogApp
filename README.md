@@ -4,6 +4,11 @@
 
 > The Blog app will be a classic example of a blog website. You will create a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
+<img width="1280" alt="portfolio_view" src="./readme/assets/desktop_version.png">
+<img width="480" alt="portfolio_view" src="./readme/assets/mobile_version.png">
+<img width="480" alt="portfolio_view" src="./readme/assets/mobile_userpage.png">
+<img width="1280" alt="portfolio_view" src="./readme/assets/desktop_userpage.png">
+
 
 ## Built With
 
