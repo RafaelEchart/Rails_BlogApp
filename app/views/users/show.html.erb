@@ -29,7 +29,7 @@
 
 <% @user.recent_posts.each do |user_post| %>
             
-                              <%= link_to "/users/#{@user_id}/posts/#{user_post.id}", class: "link_style" do %>
+                              <%= link_to "/users/#{@user.id}/posts/#{user_post.id}", class: "link_style" do %>
 
       <div class="blog-slider">
       <h2 class="background double"><span>Post #<%= user_post.id %>: <%= user_post.title %> </span></h2>
@@ -43,7 +43,7 @@
               <% end %>
 <% end %>
 
-<%= link_to "/users/#{@user_id}/posts", class: "link_style center_button" do %>
+<%= link_to "/users/#{@user.id}/posts", class: "link_style center_button" do %>
 
 <button class="button-29" role="button">See all posts</button>
 <% end %>

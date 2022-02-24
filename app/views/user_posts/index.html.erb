@@ -22,7 +22,7 @@
       <% @user_posts.each do |user_post| %>
               
 
-                <%= link_to "/users/#{@user_id}/posts/#{user_post.id}", class: "link_style" do %>
+                <%= link_to "/users/#{@user.id}/posts/#{user_post.id}", class: "link_style" do %>
 
       <div class="blog-slider">
       <h2 class="background double"><span>Post #<%= user_post.id %>: <%= user_post.title %> </span></h2>
@@ -40,10 +40,9 @@
       <% else %>
 
             
-    <% user_post.comments.each do |comment| %>
+    <% user_post.recent_comments.each do |comment| %>
     Username: <%= comment.user.name %>
     Comment: <%= comment.text %>
-    
 <br />
     <% end %>
 
