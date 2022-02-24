@@ -28,11 +28,9 @@
 
 
       </div>
-              <%= link_to "/users/#{@user.id}/posts", class: "link_style center_button" do %>
+              
+                <%= render 'partials/allpostbutton', :user => @user%>
 
-      
-<button class="button-29" role="button">See all posts</button>
-              <%end%>
 
       
       </div>

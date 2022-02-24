@@ -216,6 +216,12 @@ h2.double::after {
     align-items: center;
 }
 
+.comment-section {
+  background-color: lightblue;
+
+  margin-top: 55px
+}
+
 @media screen and (max-width: 800px) {
   .profile-container {
     height: 355px;
