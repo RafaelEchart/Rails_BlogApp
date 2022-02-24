@@ -1,1 +1,20 @@
-<h1>This page will display all the post of the user (by ID)</h1>
+<body class="users_page_body">
+
+              <%= render 'partials/profileheader', :user => @user%>
+
+
+
+
+ <% if @user_posts.empty? %>
+                  <%= render 'partials/nodata' %>
+
+      <% else %>
+
+      <% @user_posts.each do |user_post| %>
+              
+                                <%= render 'partials/postwithcomments', :user => @user, :user_post => user_post%>
+
+      <% end %>
+      <% end %>
+
+      </body>

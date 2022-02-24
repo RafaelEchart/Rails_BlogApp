@@ -1,0 +1,29 @@
+<%= link_to "/users/#{user.id}/posts/#{user_post.id}", class: "link_style" do %>
+
+      <div class="blog-slider">
+      <h2 class="background double"><span>Post #<%= user_post.id %>: <%= user_post.title %> </span></h2>
+            <div class="biografia_text margin_bottom"> <%= user_post.text %> </div>
+            
+            <div class="likes_comments_align">
+            <span>Comments: <%= user_post.comments_counter if user_post.comments_counter %> <%= "0" if !user_post.comments_counter %></span>
+            <span>Likes: <%= user_post.likes_counter if user_post.likes_counter %> <%= "0" if !user_post.likes_counter %></span>
+            </div>
+            
+      <div class="blog-slider comment-section">
+
+      <% if user_post.comments.empty?%>
+        <h3>No comments yet</h3>
+      <% else %>
+
+            
+    <% user_post.recent_comments.each do |comment| %>
+    Username: <%= comment.user.name %>
+    Comment: <%= comment.text %>
+<br />
+    <% end %>
+      <% end %>
+      </div>
+     
+      </div>
+     
+      <% end %>
