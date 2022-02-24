@@ -20,7 +20,9 @@
 
 
       <% @user_posts.each do |user_post| %>
-      <a href="/users/<%= @user.id %>/posts/<%= user_post.id %>" class="link_style">
+              
+
+                <%= link_to "/users/#{@user_id}/posts/#{user_post.id}", class: "link_style" do %>
 
       <div class="blog-slider">
       <h2 class="background double"><span>Post #<%= user_post.id %>: <%= user_post.title %> </span></h2>
@@ -30,13 +32,14 @@
             <span>Comments: <%= user_post.comments_counter if user_post.comments_counter %> <%= "0" if !user_post.comments_counter %></span>
             <span>Likes: <%= user_post.likes_counter if user_post.likes_counter %> <%= "0" if !user_post.likes_counter %></span>
             </div>
+            
       <div class="blog-slider" style="background-color: lightblue; margin-top: 55px">
 
       <% if user_post.comments.empty?%>
         <h3>No comments yet</h3>
       <% else %>
 
-            <% if user_post.comments.length <= 4%>
+            
     <% user_post.comments.each do |comment| %>
     Username: <%= comment.user.name %>
     Comment: <%= comment.text %>
@@ -44,18 +47,9 @@
 <br />
     <% end %>
 
-            <% else %>
+           
 
-          <% [1,2,3,4].each do |n| %>
-    Username: <%= user_post.comments[n].user.name %>
-    Comment: <%= user_post.comments[n].text %>
-    
-<br />
-    <% end %>
-
-
-
-            <% end %>
+     
 
 
       
@@ -72,8 +66,8 @@
       
       </div>
 
-              </a>
       
+      <% end %>
       <% end %>
 
       </body>

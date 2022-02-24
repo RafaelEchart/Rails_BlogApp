@@ -27,8 +27,9 @@
       </div>
       </div>
 
-<% @user_posts.each do |user_post| %>
-              <a href="/users/<%= @user.id %>/posts/<%= user_post.id %>" class="link_style">
+<% @user.recent_posts.each do |user_post| %>
+            
+                              <%= link_to "/users/#{@user_id}/posts/#{user_post.id}", class: "link_style" do %>
 
       <div class="blog-slider">
       <h2 class="background double"><span>Post #<%= user_post.id %>: <%= user_post.title %> </span></h2>
@@ -39,13 +40,13 @@
             <span>Likes: <%= user_post.likes_counter if user_post.likes_counter %> <%= "0" if !user_post.likes_counter %></span>
             </div>
       </div>
-              </a>
+              <% end %>
 <% end %>
 
+<%= link_to "/users/#{@user_id}/posts", class: "link_style center_button" do %>
 
-<a href="/users/<%= @user.id %>/posts" class="link_style center_button">
 <button class="button-29" role="button">See all posts</button>
-</a>
+<% end %>
 
 
     
