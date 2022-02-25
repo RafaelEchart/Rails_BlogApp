@@ -17,26 +17,17 @@ class UserPostsController < ApplicationController
     @current_user = User.find(params[:user_id])
     @post = Post.new(user: @current_user, title: params[:post][:title], text: params[:post][:text], comments_counter: 0, likes_counter: 0)
 
-
-    if @post.valid?
       
       if @post.save
       flash[:success] = 'Post successfully created'
       redirect_to "/users/#{@current_user.id}/posts/#{@post.id}"
     else
-      flash[:error] = 'Error: Post could not be created'
-      redirect_to "/users/#{@current_user.id}/posts/new"
-    end
-
-
-    else 
-      
-      flash[:error] = '¡The inputs can not be empty!'
+      flash[:error_title] = @post.errors.messages[:title][0]
+      flash[:error_comment] = @post.errors.messages[:text][0]
       redirect_to "/users/#{@current_user.id}/posts/new"
 
-
-
     end
+
    
   end
 
