@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   
   post '/users/:user_id/posts', to: 'user_posts#create'
   post '/users/:user_id/posts/:post_id/new_comment', to: 'user_posts#submitcomment'
+  post '/users/:user_id/posts/:post_id/new_like', to: 'user_posts#submitlike'
 end

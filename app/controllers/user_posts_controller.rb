@@ -6,8 +6,9 @@ class UserPostsController < ApplicationController
 
   
   def show
-    @user = User.find(params[:user_id])
-    @post = Post.find(params[:post_id])
+
+    @user, @post = get_User_Post
+   
   end
   
   def new 
@@ -29,13 +30,14 @@ class UserPostsController < ApplicationController
   end
 
   def createcomment 
-    @user = User.find(params[:user_id])
-    @post = Post.find(params[:post_id])
+    @user, @post = get_User_Post
+
   end
 
   def submitcomment
-    @user = User.find(params[:user_id])
-    @post = Post.find(params[:post_id])
+    @user, @post = get_User_Post
+
+
     @comment = Comment.create(post_id: @post.id, user_id: @user.id, text: params[:post][:text] );
 
     if @comment.save
@@ -46,5 +48,32 @@ class UserPostsController < ApplicationController
       flash.now[:error] = 'Error: Comment could not be created'
       render :createcomment
     end
+  end
+
+
+  def submitlike 
+
+        @user, @post = get_User_Post
+
+    @like = Like.create(post_id: @post.id, user_id: @user.id);
+
+    if @like.save
+      
+      flash[:success] = 'Like successfully created'
+      redirect_to "/users/#{@user.id}/posts/#{@post.id}"
+    else
+      flash.now[:error] = 'Error: Like could not be created'
+      render :show
+    end
+  end
+
+
+  private 
+
+  def get_User_Post 
+    user = User.find(params[:user_id])
+    post = Post.find(params[:post_id])
+
+    [user, post]
   end
 end
