@@ -197,6 +197,15 @@
     margin: 20px;
 }
 
+.profile_user_counter {
+  font-size: 65px;
+    color: aliceblue;
+}
+
+.profile_right_info {
+  text-align: center;
+}
+
 
 @media screen and (max-width: 992px) {
   .blog-slider {
