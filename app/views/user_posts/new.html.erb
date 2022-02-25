@@ -1,5 +1,10 @@
  <body class="users_page_body">
 
+                <div class="error_color">
+                 <%= render 'partials/successflash'%>
+                </div>
+
+
 <div class="blog-slider__item_column">
   <h2>Create new post</h2>
   <h3>@<%= @user.name.gsub(/\s+/, "") %></h3>
