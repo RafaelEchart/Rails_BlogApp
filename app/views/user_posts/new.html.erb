@@ -1,9 +1,46 @@
-<div class="post-creator">
+ <body class="users_page_body">
+
+<div class="blog-slider__item_column">
+  <h2>Create new post</h2>
+  <h3>@<%= @user.name %></h3>
+</div>
+
+  <div class="blog-slider">
+
+  <div class="post-creator">
   <%= form_with(model: @post, url: "/users/#{params[:user_id]}/posts", method: :post, local: true) do |form| %>
+
+  <h2 class="background double">
+  <span>
   <%= form.label(:title, "Post title") %>
+  </span>
+  </h2>
+
+<div class="form_newpost_title">
   <%= form.text_field :title %>
+</div>
+  
+
+
+  
+ <h2 class="background double">
+  <span>
   <%= form.label(:text, "Post content") %>
+  </span>
+ </h2>
+
+   <div class="form_newpost_text">
   <%= form.text_area :text, size: "60x10" %>
-  <%= form.submit "Create post", class:"comment-creater-btn" %>
+</div>
+
+<div class="blog-slider__item">
+  <%= form.submit "Create post", class:"button-29" %>
+</div>
 <% end %>
 </div>
+           
+    </div>
+
+
+
+</body>

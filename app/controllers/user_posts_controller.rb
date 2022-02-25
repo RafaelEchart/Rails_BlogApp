@@ -11,6 +11,7 @@ class UserPostsController < ApplicationController
   end
   
   def new 
+   @user = User.find(params[:user_id])
    @post = Post.new
   end
 
