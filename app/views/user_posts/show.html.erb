@@ -30,8 +30,14 @@
 
 
       </div>
-              
-                <%= render 'partials/allpostbutton', :user => @user, :message => "See all posts"%>
+              <div class="post_buttons">
+               
+
+
+                <%= render 'partials/generalbutton', :message => "See all posts", :link => "/users/#{@user.id}/posts"%>
+                <%= render 'partials/generalbutton', :message => "Add a comment", :link => "/users/#{@user.id}/posts/new"%>
+
+              </div>
 
 
       

@@ -98,6 +98,12 @@
   float: right;
 }
 
+.post_buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 /* CSS */
 .button-17 {
   align-items: center;
