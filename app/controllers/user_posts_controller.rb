@@ -25,40 +25,6 @@ class UserPostsController < ApplicationController
     end
   end
 
-  def createcomment
-    @user, @post = user_post_helper
-  end
-
-  def submitcomment
-    @user, @post = user_post_helper
-
-    @comment = Comment.create(post_id: @post.id, user_id: @user.id, text: params[:post][:text])
-
-    if @comment.save
-
-      flash[:success] = 'Comment successfully created'
-      redirect_to "/users/#{@user.id}/posts/#{@post.id}"
-    else
-      flash.now[:error] = 'Error: Comment could not be created'
-      render :createcomment
-    end
-  end
-
-  def submitlike
-    @user, @post = user_post_helper
-
-    @like = Like.create(post_id: @post.id, user_id: @user.id)
-
-    if @like.save
-
-      flash[:success] = 'Like successfully created'
-      redirect_to "/users/#{@user.id}/posts/#{@post.id}"
-    else
-      flash.now[:error] = 'Error: Like could not be created'
-      render :show
-    end
-  end
-
   private
 
   def user_post_helper
