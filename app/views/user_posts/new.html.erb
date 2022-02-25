@@ -1,1 +1,9 @@
-<h1>Here will be form</h1>
+<div class="post-creator">
+  <%= form_with(model: @post, url: "/users/#{params[:user_id]}/posts", method: :post, local: true) do |form| %>
+  <%= form.label(:title, "Post title") %>
+  <%= form.text_field :title %>
+  <%= form.label(:text, "Post content") %>
+  <%= form.text_area :text, size: "60x10" %>
+  <%= form.submit "Create post", class:"comment-creater-btn" %>
+<% end %>
+</div>

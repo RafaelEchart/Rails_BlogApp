@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get '/users/:user_id/posts', to: 'user_posts#index'
   get '/users/:user_id/posts/new', to: 'user_posts#new'
   get '/users/:user_id/posts/:post_id', to: 'user_posts#show'
+  
+  post '/users/:user_id/posts', to: 'user_posts#create'
 end
