@@ -22,5 +22,4 @@ class LikesController < ApplicationController
 
     [user, post]
   end
-
 end
