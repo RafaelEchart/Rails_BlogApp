@@ -4,20 +4,16 @@ class UserPostsController < ApplicationController
     @user_posts = Post.where(user_id: params[:user_id])
   end
 
-  
   def show
-
-    @user, @post = get_User_Post
-   
-  end
-  
-  def new 
-   @user = User.find(params[:user_id])
-   @post = Post.new
+    @user, @post = user_post_helper
   end
 
+  def new
+    @user = User.find(params[:user_id])
+    @post = Post.new
+  end
 
-  def create 
+  def create
     @current_user = User.find(params[:user_id])
     @post = Post.new(user: @current_user, title: params[:post][:title], text: params[:post][:text])
     if @post.save
@@ -29,19 +25,17 @@ class UserPostsController < ApplicationController
     end
   end
 
-  def createcomment 
-    @user, @post = get_User_Post
-
+  def createcomment
+    @user, @post = user_post_helper
   end
 
   def submitcomment
-    @user, @post = get_User_Post
+    @user, @post = user_post_helper
 
-
-    @comment = Comment.create(post_id: @post.id, user_id: @user.id, text: params[:post][:text] );
+    @comment = Comment.create(post_id: @post.id, user_id: @user.id, text: params[:post][:text])
 
     if @comment.save
-      
+
       flash[:success] = 'Comment successfully created'
       redirect_to "/users/#{@user.id}/posts/#{@post.id}"
     else
@@ -50,15 +44,13 @@ class UserPostsController < ApplicationController
     end
   end
 
+  def submitlike
+    @user, @post = user_post_helper
 
-  def submitlike 
-
-        @user, @post = get_User_Post
-
-    @like = Like.create(post_id: @post.id, user_id: @user.id);
+    @like = Like.create(post_id: @post.id, user_id: @user.id)
 
     if @like.save
-      
+
       flash[:success] = 'Like successfully created'
       redirect_to "/users/#{@user.id}/posts/#{@post.id}"
     else
@@ -67,10 +59,9 @@ class UserPostsController < ApplicationController
     end
   end
 
+  private
 
-  private 
-
-  def get_User_Post 
+  def user_post_helper
     user = User.find(params[:user_id])
     post = Post.find(params[:post_id])
 
