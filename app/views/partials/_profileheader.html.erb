@@ -10,7 +10,12 @@
               <span class="profile_joined">Joined: <%= user.created_at.strftime("%B %d, %Y") %></span>
               <div class="profile_username">@<%= user.name.gsub(/\s+/, "") %></div>
             </div>
-              <button class="button-17" role="button">Posts: <%= user.post_counter if user.post_counter %> <%= "0" if !user.post_counter %></button>
+            <div class="profile_right_info">
+              <h2 class="profile_user_counter"><%= user.post_counter if user.post_counter %> <%= "0" if !user.post_counter %></h2>
+              <%= link_to "/users/#{user.id}/posts/new", class: "link_style" do %>
+              <button class="button-29" role="button">New post</button>
+              <% end %>
+            </div>
             </div>
           </div>
           

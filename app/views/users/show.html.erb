@@ -28,7 +28,7 @@
               <% end %>
 <% end %>
 
-                <%= render 'partials/allpostbutton', :user => @user%>
+                <%= render 'partials/generalbutton', :message => "See all posts", :link => "/users/#{@user.id}/posts"%>
 
       <% end %>
 

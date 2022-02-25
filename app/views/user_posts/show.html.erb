@@ -1,5 +1,7 @@
 <body class="users_page_body">
 
+         
+                <%= render 'partials/successflash'%>
 
 
       <div class="blog-slider">
@@ -28,8 +30,19 @@
 
 
       </div>
-              
-                <%= render 'partials/allpostbutton', :user => @user%>
+              <div class="post_buttons">
+               
+
+
+                <%= render 'partials/generalbutton', :message => "See all posts", :link => "/users/#{@user.id}/posts/"%>
+                
+
+            
+                <%= render 'partials/likebutton',  :link => "/users/#{@user.id}/posts/#{@post.id}/new_like"%>
+
+                <%= render 'partials/generalbutton', :message => "Add a comment", :link => "/users/#{@user.id}/posts/#{@post.id}/new_comment"%>
+
+              </div>
 
 
       
