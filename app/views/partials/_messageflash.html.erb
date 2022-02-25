@@ -1,0 +1,8 @@
+ <% flash.each do |message_type, message| %>
+    <% if message_type == "error" %>
+            <h2 class="flashMessage error_color"><%= message %></h2>
+    <% else %>
+            <h2 class="flashMessage"><%= message %></h2>
+    <% end %>
+  
+<% end %>

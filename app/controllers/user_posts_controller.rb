@@ -21,7 +21,9 @@ class UserPostsController < ApplicationController
       if @post.save
       flash[:success] = 'Post successfully created'
       redirect_to "/users/#{@current_user.id}/posts/#{@post.id}"
+      
     else
+
       flash[:error_title] = @post.errors.messages[:title][0]
       flash[:error_comment] = @post.errors.messages[:text][0]
       redirect_to "/users/#{@current_user.id}/posts/new"

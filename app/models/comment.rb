@@ -1,4 +1,8 @@
 class Comment < ApplicationRecord
+
+  validates :text, presence: { message: 'Comment must not be blank!' }
+
+
   belongs_to :user
   belongs_to :post
 
