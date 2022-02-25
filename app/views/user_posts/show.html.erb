@@ -34,8 +34,8 @@
                
 
 
-                <%= render 'partials/generalbutton', :message => "See all posts", :link => "/users/#{@user.id}/posts"%>
-                <%= render 'partials/generalbutton', :message => "Add a comment", :link => "/users/#{@user.id}/posts/new"%>
+                <%= render 'partials/generalbutton', :message => "See all posts", :link => "/users/#{@user.id}/posts/"%>
+                <%= render 'partials/generalbutton', :message => "Add a comment", :link => "/users/#{@user.id}/posts/#{@post.id}/new_comment"%>
 
               </div>
 

@@ -27,4 +27,24 @@ class UserPostsController < ApplicationController
       render :new
     end
   end
+
+  def createcomment 
+    @user = User.find(params[:user_id])
+    @post = Post.find(params[:post_id])
+  end
+
+  def submitcomment
+    @user = User.find(params[:user_id])
+    @post = Post.find(params[:post_id])
+    @comment = Comment.create(post_id: @post.id, user_id: @user.id, text: params[:post][:text] );
+
+    if @comment.save
+      
+      flash[:success] = 'Comment successfully created'
+      redirect_to "/users/#{@user.id}/posts/#{@post.id}"
+    else
+      flash.now[:error] = 'Error: Comment could not be created'
+      render :createcomment
+    end
+  end
 end
