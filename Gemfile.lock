@@ -73,6 +73,9 @@ GEM
     bootsnap (1.10.3)
       msgpack (~> 1.2)
     builder (3.2.4)
+    bullet (7.0.1)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.11)
     capybara (3.36.0)
       addressable
       matrix
@@ -106,7 +109,6 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
-    json (2.6.1)
     loofah (2.14.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -237,6 +239,7 @@ GEM
     tzinfo-data (1.2021.5)
       tzinfo (>= 1.0.0)
     unicode-display_width (2.1.0)
+    uniform_notifier (1.14.2)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -258,12 +261,12 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  bullet
   capybara
   debug
   ffi
   importmap-rails
   jbuilder
-  json
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.2, >= 7.0.2.2)
