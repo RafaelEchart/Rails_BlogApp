@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
 
-  validates :title, presence:  { message: 'Title can not be blank' }
-  validates :text, length: { maximum: 250, minimum: 10, message: 'Post content should be at least 10 characters and less than 250' }
+  validates :title, presence:  { message: 'Title can not be blank' }, length: { maximum: 250, message: 'Post content should be less than 250' }
+  validates :text,  presence:  { message: 'Post content can not be blank' }
   validates :comments_counter, numericality: { message: 'The input should be greater or equal to 0', only_integer: true, greater_than_or_equal_to: 0, }
   validates :likes_counter, numericality: { message: 'The input should be greater or equal to 0', only_integer: true, greater_than_or_equal_to: 0, }
 
