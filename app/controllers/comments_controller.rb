@@ -11,11 +11,10 @@ class CommentsController < ApplicationController
     if @comment.save
 
       flash[:success] = 'Comment successfully created'
-      redirect_to "/users/#{@user.id}/posts/#{@post.id}"
     else
       flash[:error] = 'Error: Comment could not be created'
-      redirect_to "/users/#{@user.id}/posts/#{@post.id}"
     end
+    redirect_to "/users/#{@user.id}/posts/#{@post.id}"
   end
 
   private

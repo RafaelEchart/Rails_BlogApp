@@ -1,8 +1,9 @@
-require_relative '../rails_helper.rb'
+require_relative '../rails_helper'
 
 RSpec.describe User, type: :model do
   subject do
-    User.new(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.', post_counter: 0)
+    User.new(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.',
+             post_counter: 0)
   end
 
   before { subject.save }
