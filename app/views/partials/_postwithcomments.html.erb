@@ -16,7 +16,7 @@
       <% else %>
 
             
-    <% user_post.recent_comments.each do |comment| %>
+    <% user_post.recent_comments.includes(:user).each do |comment| %>
     Username: <%= comment.user.name %>
     Comment: <%= comment.text %>
 <br />
