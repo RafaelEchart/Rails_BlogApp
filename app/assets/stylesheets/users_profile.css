@@ -152,6 +152,10 @@ h2.double::after {
   text-decoration: none;
 }
 
+.error_color {
+  color: red;
+}
+
 .button-29 {
   align-items: center;
   appearance: none;

@@ -1,7 +1,7 @@
 <body class="users_page_body">
 
          
-                <%= render 'partials/successflash'%>
+                <%= render 'partials/messageflash'%>
 
 
       <div class="blog-slider">
@@ -18,7 +18,7 @@
         <h3>No comments yet</h3>
       <% else %>
 
-      <% @post.comments.each do |comment| %>
+      <% @post.comments.includes(:user).each do |comment| %>
     Username: <%= comment.user.name %>
     Comment: <%= comment.text %>
    

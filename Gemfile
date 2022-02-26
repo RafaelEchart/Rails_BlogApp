@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.0'
 
+# N+1 problems
+gem 'bullet'
+
 # Rails linters
 gem 'rubocop', '>= 1.0', '< 2.0'
 
