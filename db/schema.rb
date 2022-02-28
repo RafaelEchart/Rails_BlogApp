@@ -38,8 +38,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_28_202439) do
     t.integer "user_id"
     t.text "title"
     t.text "text"
-    t.integer "comments_counter"
-    t.integer "likes_counter"
+    t.integer "comments_counter", default: 0
+    t.integer "likes_counter", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
@@ -49,7 +49,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_28_202439) do
     t.string "name"
     t.string "photo"
     t.text "bio"
-    t.integer "post_counter"
+    t.integer "post_counter", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
