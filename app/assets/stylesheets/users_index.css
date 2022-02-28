@@ -104,6 +104,23 @@
   flex-wrap: wrap;
 }
 
+.session_buttons {
+  align-self: center;
+  margin: 0;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  max-width: 800px;
+}
+
+.session_buttons button {
+  margin: 20px;
+}
+
+.no_margin {
+  margin: 0;
+}
+
 /* CSS */
 .button-17 {
   align-items: center;

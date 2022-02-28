@@ -1,5 +1,15 @@
 <body class="main_page_body">
 
+      <div class="session_buttons">
+      <% if user_signed_in? %>
+          <%= render 'partials/logoutbutton'%>
+      <% else %>
+          <%= render 'partials/sessionbutton', :message => "Sign Up", :link => "/users/sign_up", :method => "get"%>
+          <%= render 'partials/sessionbutton', :message => "Sign In", :link => "/users/sign_in", :method => "get"%>
+      <% end %>
+      </div>
+
+
         <% if @all_users.empty? %>
                     <%= render 'partials/nodata' %>
         <% else %>
