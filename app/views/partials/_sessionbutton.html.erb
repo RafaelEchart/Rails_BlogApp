@@ -1,0 +1,24 @@
+<div class="session_buttons">
+<% if user_signed_in? %>
+
+<%= form_with url: '/users/sign_out', method: :delete do |f| %>
+    <%= f.submit "Log out", class: 'button-17' %>
+  <% end %>
+    
+<% else %>
+
+
+<%= link_to "/users/sign_up", class: "link_style center_button" do %>
+
+      
+<button class="button-17" role="button">Sign Up</button>
+              <%end%>
+<%= link_to "/users/sign_in", class: "link_style center_button" do %>
+
+      
+<button class="button-17" role="button">Sign In</button>
+              <%end%>
+
+
+<% end %>
+</div>
