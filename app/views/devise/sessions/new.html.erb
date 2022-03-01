@@ -32,19 +32,17 @@
   <% if devise_mapping.rememberable? %>
 
 
-<h2 class="background double">
-<span class="span">
+<span class="remember_me">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
 </span>
-</h2>
 
 
   <% end %>
 
 <div class="links-align">
 
-  <div class="actions">
+  <div class="actions button_margin">
     <%= f.submit "Log in", class:"button-29" %>
   </div>
 <% end %>
