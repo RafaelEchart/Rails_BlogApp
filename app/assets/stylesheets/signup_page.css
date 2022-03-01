@@ -1,0 +1,52 @@
+.credentials_page_body {
+    font-family: "Fira Sans", sans-serif;
+    background: #dc2424; 
+  background: -webkit-linear-gradient(to right, #dc2424, #4a569d); 
+  background: linear-gradient(to right, #dc2424, #4a569d); 
+}
+
+.credentials-title {
+    text-align: center;
+    margin-bottom: 10px
+}
+
+.credentials-input {
+    margin: 15px;
+}
+
+.credentials-input input {
+    width: 100%;
+    font-size: 20px;
+}
+
+.credentials-input textarea {
+    width: 100%;
+    font-size: 20px;
+}
+
+.password-min-length {
+    font-size: 10px;
+    vertical-align: middle;
+}
+
+
+.credentials-links {
+    text-align: center;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.credentials-remember-me {
+    margin: 15px;
+}
+
+.credentials-remember-me input {
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+.credentials-remember-me label {
+    cursor: pointer;
+}
