@@ -6,7 +6,7 @@
 
 .main_page_body {
   background-color: #ffe53b;
-  background-image: linear-gradient(170deg, #c04848 0%, #480048 74%);
+  background-image: linear-gradient(170deg, #480048 0%, #c04848 74%);
   min-height: 100vh;
   font-family: 'Fira Sans', sans-serif;
   display: flex;
@@ -102,6 +102,10 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+.white-text {
+  color: white;
 }
 
 /* CSS */
