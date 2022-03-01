@@ -1,26 +1,59 @@
-<h2>Log in</h2>
+<body class="signup_page_body">
+      <div class="blog-slider">
+
+<h2 class="blog-slider__title title-center">Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  
 
-  <div class="field">
+  <h2 class="background double">
+<span>
+    <%= f.label :email %><br />
+</span>
+</h2>
+
+ <div class="session-input-container">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+</div>
+
+  <h2 class="background double">
+<span>
     <%= f.label :password %><br />
+</span>
+</h2>
+
+ <div class="session-input-container">
     <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+</div>
+
+
+
 
   <% if devise_mapping.rememberable? %>
-    <div class="field">
+
+
+    <h2 class="background double">
+<span class="span">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
-    </div>
+</span>
+</h2>
+
+
   <% end %>
 
+<div class="links-align">
+
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", class:"button-29" %>
   </div>
 <% end %>
+<div class="inner-spacing">
 
 <%= render "devise/shared/links" %>
+
+</div>
+</div>
+
+</div>
+</body>
