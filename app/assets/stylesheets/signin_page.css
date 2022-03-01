@@ -1,13 +1,13 @@
 .span label {
-    font-size: 15px;
-    font-weight: 100;
+  font-size: 15px;
+  font-weight: 100;
 }
 
 .remember_me {
-    margin: 15px;
-    cursor: pointer;
+  margin: 15px;
+  cursor: pointer;
 }
 
 .button_margin {
-    margin-top: 15px;
+  margin-top: 15px;
 }

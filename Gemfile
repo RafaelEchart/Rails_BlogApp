@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.0'
 
-#Authentication GEM
+# Authentication GEM
 gem 'devise'
 
 # N+1 problems
