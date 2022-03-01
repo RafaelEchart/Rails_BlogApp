@@ -3,6 +3,7 @@
       <div class="session_buttons">
       <% if user_signed_in? %>
           <%= render 'partials/logoutbutton'%>
+          <%= render 'partials/sessionbutton', :message => "Change Password", :link => "/users/password/edit", :method => "get"%>
       <% else %>
           <%= render 'partials/sessionbutton', :message => "Sign Up", :link => "/users/sign_up", :method => "get"%>
           <%= render 'partials/sessionbutton', :message => "Sign In", :link => "/users/sign_in", :method => "get"%>
