@@ -1,0 +1,35 @@
+.signup_page_body {
+    background-color: #ffe53b;
+    background-image: linear-gradient(170deg, #DC2424 0%, #4A569D 74%);
+    min-height: 100vh;
+    font-family: 'Fira Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+
+.title-center {
+    text-align: center;
+}
+
+.session-input-container {
+    margin: 13px;
+}
+.session-input-container input {
+    width: 100%;
+    font-size: 18px;
+}
+
+.append_text {
+    font-size: 10px;
+    vertical-align: middle;
+}
+
+.links-align {
+    text-align: center;
+}
+
+.inner-spacing {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+}
