@@ -1,16 +1,33 @@
-<h2>Resend confirmation instructions</h2>
+<body class="signup_page_body">
+      <div class="blog-slider">
+
+<h2 class="blog-slider__title title-center">Resend confirmation instructions</h2>
 
 <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
+<h2 class="background double">
+<span>
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
-  </div>
+</span>
+</h2>
 
-  <div class="actions">
-    <%= f.submit "Resend confirmation instructions" %>
+ <div class="session-input-container">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+</div>
+
+
+<div class="links-align">
+
+  <div class="actions button_margin">
+    <%= f.submit "Resend email", class: "button-29" %>
   </div>
 <% end %>
 
+<div class="inner-spacing">
+
 <%= render "devise/shared/links" %>
+</div>
+</div>
+</div>
+</body>
