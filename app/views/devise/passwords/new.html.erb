@@ -1,0 +1,36 @@
+<body class="signup_page_body">
+<div class="white-text">
+    <%= render 'partials/messageflash'%>
+    </div>
+      <div class="blog-slider">
+
+<h2 class="blog-slider__title title-center">¿Forgot your password?</h2>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+<h2 class="background double">
+<span>
+    <%= f.label :email %>
+    
+</span>
+</h2>
+
+ <div class="session-input-container">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+</div>
+
+<div class="links-align">
+
+  <div class="actions button_margin">
+    <%= f.submit "Submit", class: "button-29" %>
+  </div>
+<% end %>
+
+<div class="inner-spacing">
+
+<%= render "devise/shared/links" %>
+</div>
+</div>
+</div>
+</body>

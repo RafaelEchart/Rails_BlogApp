@@ -1,0 +1,60 @@
+<body class="signup_page_body">
+<div class="white-text">
+    <%= render 'partials/messageflash'%>
+    </div>
+      <div class="blog-slider">
+
+<h2 class="blog-slider__title title-center">Log in</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  
+
+  <h2 class="background double">
+<span>
+    <%= f.label :email %><br />
+</span>
+</h2>
+
+ <div class="session-input-container">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+</div>
+
+  <h2 class="background double">
+<span>
+    <%= f.label :password %><br />
+</span>
+</h2>
+
+ <div class="session-input-container">
+    <%= f.password_field :password, autocomplete: "current-password" %>
+</div>
+
+
+
+
+  <% if devise_mapping.rememberable? %>
+
+
+<span class="remember_me">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+</span>
+
+
+  <% end %>
+
+<div class="links-align">
+
+  <div class="actions button_margin">
+    <%= f.submit "Log in", class:"button-29" %>
+  </div>
+<% end %>
+<div class="inner-spacing">
+
+<%= render "devise/shared/links" %>
+
+</div>
+</div>
+
+</div>
+</body>

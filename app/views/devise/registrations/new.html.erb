@@ -1,0 +1,78 @@
+<body class="signup_page_body">
+<div class="white-text">
+    <%= render 'partials/messageflash'%>
+    </div>
+    
+      <div class="blog-slider">
+
+<h2 class="blog-slider__title title-center">Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: user_registration_path()) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+<h2 class="background double">
+<span>
+    <%= f.label :name %>
+</span>
+</h2>
+
+ <div class="session-input-container">
+    <%= f.text_field :name %>    
+</div>
+
+<h2 class="background double">
+<span>
+    <%= f.label :bio %><br />
+</span>
+</h2>
+
+ <div class="session-input-container">
+    <%= f.text_field :bio %>
+        
+</div>
+
+<h2 class="background double">
+<span>
+       <%= f.label :email %><br />
+</span>
+</h2>
+
+ <div class="session-input-container">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+</div>
+
+<h2 class="background double">
+<span>
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em class="append_text">(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+</span>
+</h2>
+
+ <div class="session-input-container">
+    <%= f.password_field :password, autocomplete: "new-password" %>
+</div>
+<h2 class="background double">
+<span>
+    <%= f.label :repeat_password %><br />
+   
+</span>
+</h2>
+
+ <div class="session-input-container">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+</div>
+
+
+<div class="links-align">
+  <div class="actions button_margin">
+    <%= f.submit "Sign up", class: "button-29" %>
+  </div>
+<% end %>
+
+<div class="inner-spacing">
+<%= render "devise/shared/links" %>
+</div>
+</div>
+</body>

@@ -1,4 +1,14 @@
 <body class="main_page_body">
+    <div class="white-text">
+    <%= render 'partials/messageflash'%>
+    </div>
+
+
+    
+       <%= render 'partials/sessionbutton' %>
+
+
+
 
         <% if @all_users.empty? %>
                     <%= render 'partials/nodata' %>
