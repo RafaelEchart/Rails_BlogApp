@@ -1,7 +1,7 @@
 class UserPostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @user_posts = Post.where(user_id: params[:user_id]).includes(:comments)
+    @user_posts = @user.posts
   end
 
   def show
@@ -14,21 +14,29 @@ class UserPostsController < ApplicationController
   end
 
   def create
-    @current_user = User.find(params[:user_id])
-    @post = Post.new(user: @current_user, title: params[:post][:title], text: params[:post][:text],
+    @post = Post.new(user: current_user, title: params[:post][:title], text: params[:post][:text],
                      comments_counter: 0, likes_counter: 0)
 
     if @post.save
       flash[:success] = 'Post successfully created'
-      redirect_to "/users/#{@current_user.id}/posts/#{@post.id}"
+      redirect_to "/users/#{current_user.id}/posts/#{@post.id}"
 
     else
 
       flash[:error_title] = @post.errors.messages[:title][0]
       flash[:error_comment] = @post.errors.messages[:text][0]
-      redirect_to "/users/#{@current_user.id}/posts/new"
+      redirect_to "/users/#{current_user.id}/posts/new"
 
     end
+  end
+
+
+  def destroy
+    @post.find(params[:id]).destroy
+
+    flash[:success] = 'Post was successfully deleted'
+   redirect_to "/users/#{current_user.id}/posts/"
+    
   end
 
   private
