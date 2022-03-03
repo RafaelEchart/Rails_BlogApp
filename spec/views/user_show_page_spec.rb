@@ -21,7 +21,7 @@ describe 'User profile page', type: :feature do
 
     it 'I can see the number of posts the user has written.' do
         visit "users/#{@user.id}"
-        expect(page).to have_content('0')
+        expect(page).to have_selector(:id, 'profile_user_counter', text: '3')
     end
 
     it 'I can see the users bio.' do
