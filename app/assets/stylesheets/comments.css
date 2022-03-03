@@ -30,3 +30,14 @@
 .button_to {
     margin: 0;
 }
+
+.delete_button_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.delete_button_style {
+    background-image: radial-gradient(100% 100% at 100% 0, #f85032 0, #e73827 100%) !important;
+}
