@@ -66,10 +66,4 @@ describe 'User profile page', type: :feature do
         click_link("post_#{@post1.id}")
         expect(current_path).to eq("/users/#{@user.id}/posts/#{@post1.id}")
     end
-
-
-
-   
-    
-  
 end

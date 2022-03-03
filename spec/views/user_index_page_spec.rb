@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'capybara/rspec'
 
-describe 'Sign In', type: :feature do
+describe 'User index page', type: :feature do
   context 'when successfull' do
     before :each do
       @user1 = User.new(name: 'Rafael', bio: "Rafael bio",photo: "https://avatars.githubusercontent.com/u/53021807?v=4", email: 'rafael@test.com', password: '123456')
