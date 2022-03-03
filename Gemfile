@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.0'
 
+# Authorization GEM
+gem 'cancancan', '~> 3.3.0'
+
 # Authentication GEM
 gem 'devise'
 

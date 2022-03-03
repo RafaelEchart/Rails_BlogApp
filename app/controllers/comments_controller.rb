@@ -1,10 +1,17 @@
 class CommentsController < ApplicationController
   def createcomment
-    @user, @post = user_post_helper
+    unless user_signed_in?
+      flash[:notice] = 'You need to log in first!'
+      redirect_to "/users/#{params[:user_id]}/posts/#{params[:post_id]}"
+    end
+
+    @post = Post.find(params[:post_id])
+    @user = current_user
   end
 
   def submitcomment
-    @user, @post = user_post_helper
+    @post = Post.find(params[:post_id])
+    @user = current_user
 
     @comment = Comment.create(post_id: @post.id, user_id: @user.id, text: params[:post][:text])
 
@@ -17,12 +24,10 @@ class CommentsController < ApplicationController
     redirect_to "/users/#{@user.id}/posts/#{@post.id}"
   end
 
-  private
-
-  def user_post_helper
-    user = User.find(params[:user_id])
-    post = Post.find(params[:post_id])
-
-    [user, post]
+  def destroy
+    @comment = Comment.find(params[:comment_id])
+    @comment.destroy
+    flash[:sucess] = 'You deleted the comment 💬'
+    redirect_to "/users/#{params[:user_id]}/posts/#{params[:post_id]}"
   end
 end

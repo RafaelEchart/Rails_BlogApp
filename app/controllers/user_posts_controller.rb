@@ -10,12 +10,23 @@ class UserPostsController < ApplicationController
 
   def new
     @user = User.find(params[:user_id])
+
+    unless user_signed_in?
+      flash[:error] = 'You need to sign in first!'
+      redirect_to "/users/#{@user.id}/posts"
+    end
+
+    if (current_user != @user) && !current_user.nil?
+      flash[:error] = "You can't post here!"
+      redirect_to "/users/#{@user.id}/posts"
+    end
+
     @post = Post.new
   end
 
   def create
     @current_user = User.find(params[:user_id])
-    @post = Post.new(user: @current_user, title: params[:post][:title], text: params[:post][:text],
+    @post = Post.new(user: current_user, title: params[:post][:title], text: params[:post][:text],
                      comments_counter: 0, likes_counter: 0)
 
     if @post.save
@@ -29,6 +40,17 @@ class UserPostsController < ApplicationController
       redirect_to "/users/#{@current_user.id}/posts/new"
 
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:post_id])
+    @post.destroy
+    flash[:success] = 'Post successfully deleted'
+    redirect_to "/users/#{params[:user_id]}/posts"
+  end
+
+  def all_posts
+    @posts = Post.all
   end
 
   private
