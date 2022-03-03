@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'capybara/rspec'
 
-describe 'User profile page', type: :feature do
+describe 'Post index page', type: :feature do
     before :each do
       @user = User.create(name: 'Rafael', bio: "This is my life", photo: "https://avatars.githubusercontent.com/u/53021807?v=4", email: 'rafael@test.com', password: '123456')
       @post1 = Post.create(user_id: @user.id, title: 'First Blog Post', text: 'This is a test 1, this is a very large post so you will have to enter to read it all' )
