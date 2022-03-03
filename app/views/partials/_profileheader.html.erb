@@ -12,9 +12,25 @@
             </div>
             <div class="profile_right_info">
               <h2 class="profile_user_counter"><%= user.post_counter if user.post_counter %> <%= "0" if !user.post_counter %></h2>
+
+
+
+
+
+
+
+
+
+
+
+<% if current_user.present? && current_user.id == user.id %>            
               <%= link_to "/users/#{user.id}/posts/new", class: "link_style" do %>
               <button class="button-29" role="button">New post</button>
               <% end %>
+        
+            <% end %>
+
+
             </div>
             </div>
           </div>

@@ -10,6 +10,17 @@ class UserPostsController < ApplicationController
 
   def new
     @user = User.find(params[:user_id])
+    
+    if !user_signed_in?
+      flash[:notice] = 'You need to sign in first!'
+      redirect_to "/users/#{@user.id}/posts"
+    end
+
+    if (current_user != @user) && current_user != nil
+      flash[:notice] = "You can't post here!"
+      redirect_to "/users/#{@user.id}/posts"
+    end
+
     @post = Post.new
   end
 
