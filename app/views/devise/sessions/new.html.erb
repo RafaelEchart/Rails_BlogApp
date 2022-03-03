@@ -16,7 +16,7 @@
 </h2>
 
  <div class="session-input-container">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", name: "email" %>
 </div>
 
   <h2 class="background double">
@@ -26,7 +26,7 @@
 </h2>
 
  <div class="session-input-container">
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.password_field :password, autocomplete: "current-password", name: "password" %>
 </div>
 
 
