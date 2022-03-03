@@ -1,43 +1,43 @@
 .comment_container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
 }
 
 .delete-button-active {
-    border: 0;
-    background-color: transparent;
-    color: red;
-    font-size: 25px;
-    cursor: pointer;
-    margin: 0;
+  border: 0;
+  background-color: transparent;
+  color: red;
+  font-size: 25px;
+  cursor: pointer;
+  margin: 0;
 }
 
 .delete-button-not-active {
-    border: 0;
-    background-color: transparent;
-    color: gray;
-    font-size: 25px;
-    cursor:not-allowed;
-    margin: 0;
+  border: 0;
+  background-color: transparent;
+  color: gray;
+  font-size: 25px;
+  cursor: not-allowed;
+  margin: 0;
 }
 
 .comment-text {
-    margin: 0;
+  margin: 0;
 }
 
 .button_to {
-    margin: 0;
+  margin: 0;
 }
 
 .delete_button_container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
 }
 
 .delete_button_style {
-    background-image: radial-gradient(100% 100% at 100% 0, #f85032 0, #e73827 100%) !important;
+  background-image: radial-gradient(100% 100% at 100% 0, #f85032 0, #e73827 100%) !important;
 }
