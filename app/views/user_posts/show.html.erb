@@ -59,7 +59,7 @@
                 <%= render 'partials/generalbutton', :message => "Add a comment", :link => "/users/#{@user.id}/posts/#{@post.id}/new_comment"%>
 
                 <% if can? :destroy, @post %>
-                 <%= button_to "Delete", user_post_delete_path(@user, @post), method: :delete %>
+                 <%= button_to "Delete", user_post_delete_path(@user.id, @post.id), method: :delete %>
                 <% end %>
 
               </div>

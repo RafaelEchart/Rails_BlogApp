@@ -12,12 +12,12 @@ class UserPostsController < ApplicationController
     @user = User.find(params[:user_id])
     
     if !user_signed_in?
-      flash[:notice] = 'You need to sign in first!'
+      flash[:error] = 'You need to sign in first!'
       redirect_to "/users/#{@user.id}/posts"
     end
 
     if (current_user != @user) && current_user != nil
-      flash[:notice] = "You can't post here!"
+      flash[:error] = "You can't post here!"
       redirect_to "/users/#{@user.id}/posts"
     end
 
@@ -43,9 +43,11 @@ class UserPostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find_by_id(params[:id])
+    @post = Post.find(params[:post_id])
     @post.destroy
-    redirect_to user_posts_path(current_user.id)
+    flash[:success] = "Post successfully deleted"
+    redirect_to "/users/#{params[:user_id]}/posts"
+
   end
 
   def all_posts
