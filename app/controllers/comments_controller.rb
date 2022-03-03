@@ -1,5 +1,11 @@
 class CommentsController < ApplicationController
   def createcomment
+
+    if !user_signed_in?
+      flash[:notice] = 'You need to log in first!'
+      redirect_to "/users/#{params[:user_id]}/posts/#{params[:post_id]}"
+    end
+    
     @post = Post.find(params[:post_id])
     @user = current_user
   end
@@ -22,7 +28,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:comment_id])
     @comment.destroy
-    flash[:notice] = 'You deleted the comment 💬'
+    flash[:sucess] = 'You deleted the comment 💬'
     redirect_to "/users/#{params[:user_id]}/posts/#{params[:post_id]}"
   end
 
