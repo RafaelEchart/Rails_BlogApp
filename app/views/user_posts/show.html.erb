@@ -19,10 +19,26 @@
       <% else %>
 
       <% @post.comments.includes(:user).each do |comment| %>
+      <div class="comment_container">
+      <div class="comment-text">
+      
     Username: <%= comment.user.name %>
     Comment: <%= comment.text %>
+      </div>
+   <% if can? :destroy, comment %>
+            
+            <%= button_to user_comment_delete_path(@user.id, @post.id ,comment.id), method: :delete, class: "delete-button-active" do %>
+                <ion-icon name="trash-outline"></ion-icon>
+            <% end %>
+   <% else %>
+            <button class="delete-button-not-active">
+            <ion-icon name="trash-outline"></ion-icon>
+            </button>
+   <% end %>
+      </div>
+          <hr>
    
-    <br />
+
     <% end %>
 
       <% end %>
@@ -41,6 +57,10 @@
                 <%= render 'partials/likebutton',  :link => "/users/#{@user.id}/posts/#{@post.id}/new_like"%>
 
                 <%= render 'partials/generalbutton', :message => "Add a comment", :link => "/users/#{@user.id}/posts/#{@post.id}/new_comment"%>
+
+                <% if can? :destroy, @post %>
+                 <%= button_to "Delete", user_post_delete_path(@user, @post), method: :delete %>
+                <% end %>
 
               </div>
 

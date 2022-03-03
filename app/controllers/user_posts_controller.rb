@@ -15,7 +15,7 @@ class UserPostsController < ApplicationController
 
   def create
     @current_user = User.find(params[:user_id])
-    @post = Post.new(user: @current_user, title: params[:post][:title], text: params[:post][:text],
+    @post = Post.new(user: current_user, title: params[:post][:title], text: params[:post][:text],
                      comments_counter: 0, likes_counter: 0)
 
     if @post.save
@@ -29,6 +29,16 @@ class UserPostsController < ApplicationController
       redirect_to "/users/#{@current_user.id}/posts/new"
 
     end
+  end
+
+  def destroy
+    @post = Post.find_by_id(params[:id])
+    @post.destroy
+    redirect_to user_posts_path(current_user.id)
+  end
+
+  def all_posts
+    @posts = Post.all
   end
 
   private

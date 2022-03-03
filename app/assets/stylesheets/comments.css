@@ -1,0 +1,32 @@
+.comment_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+
+.delete-button-active {
+    border: 0;
+    background-color: transparent;
+    color: red;
+    font-size: 25px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.delete-button-not-active {
+    border: 0;
+    background-color: transparent;
+    color: gray;
+    font-size: 25px;
+    cursor:not-allowed;
+    margin: 0;
+}
+
+.comment-text {
+    margin: 0;
+}
+
+.button_to {
+    margin: 0;
+}
