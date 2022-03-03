@@ -2,7 +2,11 @@ require_relative '../rails_helper'
 
 RSpec.describe Like, type: :model do
   describe '#update_counter' do
-    let(:user) { User.create!(name: 'Paulina', photo: 'MB', bio: 'bio', post_counter: 3) }
+    let(:user) do
+      User.create(name: 'Rafael', bio: 'This is my life',
+                  photo: 'https://avatars.githubusercontent.com/u/53021807?v=4',
+                  email: 'rafael@test.com', password: '123456')
+    end
     let(:post) do
       Post.create!(title: 'Post', user_id: user.id, text: 'Some text', comments_counter: 0, likes_counter: 1)
     end
