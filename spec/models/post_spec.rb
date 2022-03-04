@@ -1,7 +1,11 @@
 require_relative '../rails_helper'
 
 RSpec.describe Post, type: :model do
-  let(:user) { User.create!(name: 'Rafael', photo: 'goolgle.com', bio: 'DOM artist!', post_counter: 0) }
+  let(:user) do
+    User.create(name: 'Rafael', bio: 'This is my life',
+                photo: 'https://avatars.githubusercontent.com/u/53021807?v=4',
+                email: 'rafael@test.com', password: '123456')
+  end
   subject do
     Post.create!(user:, title: 'Testing', text: 'Content', comments_counter: 0, likes_counter: 0)
   end

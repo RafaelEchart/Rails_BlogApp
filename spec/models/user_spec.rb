@@ -2,8 +2,9 @@ require_relative '../rails_helper'
 
 RSpec.describe User, type: :model do
   subject do
-    User.new(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.',
-             post_counter: 0)
+    User.create(name: 'Rafael', bio: 'This is my life',
+                photo: 'https://avatars.githubusercontent.com/u/53021807?v=4',
+                email: 'rafael@test.com', password: '123456')
   end
 
   before { subject.save }

@@ -27,7 +27,7 @@
               <span class="blog-slider__code">Joined: <%= user.created_at.strftime("%B %d, %Y") %></span>
               <div class="blog-slider__title"><%= user.name %></div>
               <div class="blog-slider__text"> <%= user.bio %></div>
-              <%= link_to "Post: #{user.post_counter if user.post_counter} #{"0" if !user.post_counter} ", "/users/#{user.id}", class: "blog-slider__button" %>
+              <%= link_to "Post: #{user.post_counter if user.post_counter} #{"0" if !user.post_counter} ", "/users/#{user.id}", class: "blog-slider__button", id: "button_#{user.email}" %>
             </div>
           </div>
           

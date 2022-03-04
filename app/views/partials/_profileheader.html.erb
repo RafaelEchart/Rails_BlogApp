@@ -11,7 +11,7 @@
               <div class="profile_username">@<%= user.name.gsub(/\s+/, "") %></div>
             </div>
             <div class="profile_right_info">
-              <h2 class="profile_user_counter"><%= user.post_counter if user.post_counter %> <%= "0" if !user.post_counter %></h2>
+              <h2 class="profile_user_counter" id="profile_user_counter"><%= user.post_counter if user.post_counter %> <%= "0" if !user.post_counter %></h2>
 
 
 
