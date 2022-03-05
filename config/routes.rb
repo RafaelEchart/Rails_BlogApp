@@ -26,4 +26,5 @@ Rails.application.routes.draw do
 
     get '/api/posts', to: 'api_requests#all_posts'
     get '/api/posts/:post_id/comments', to: 'api_requests#post_comments'
+    post '/api/posts/comment', to: 'api_requests#new_comments'
 end
