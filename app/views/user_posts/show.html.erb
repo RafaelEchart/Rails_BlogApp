@@ -25,7 +25,7 @@
     Username: <%= comment.user.name %>
     Comment: <%= comment.text %>
       </div>
-   <% if can? :destroy, comment %>
+   <% if can? :delete, comment %>
             
             <%= button_to user_comment_delete_path(@user.id, @post.id ,comment.id), method: :delete, class: "delete-button-active" do %>
                 <ion-icon name="trash-outline"></ion-icon>
@@ -61,7 +61,7 @@
 
               </div>
 
-                <% if can? :destroy, @post %>
+                <% if can? :delete, @post %>
                 <div class="delete_button_container">
                  <%= button_to "Delete", user_post_delete_path(@user.id, @post.id), method: :delete, class: "button-29 delete_button_style" %>
                 </div>
